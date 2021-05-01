@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 class Header extends Component {
 
@@ -40,16 +41,19 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Jumbotron fluid style={{margin:0}}>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <h1>NuCamp</h1>
-                                <h2>a better way to camp</h2>
+                <Fade in>
+                    <Jumbotron fluid style={{margin:0}}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <h1>NuCamp</h1>
+                                    <h2>a better way to camp</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Jumbotron>
+                    </Jumbotron>
+                </Fade>
+                
 
                 <Navbar dark sticky="top" expand="md">
                     <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/logo.png" height="30" width="30" alt="NuCamp Logo" /></NavbarBrand>

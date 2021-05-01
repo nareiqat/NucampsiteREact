@@ -1,9 +1,10 @@
+import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 
-function RenderDirectoryItem({ campsite }) {
+function RenderDirectoryItem({campsite}) {
     return (
         <Card>
             <Link to={`/directory/${campsite.id}`}>
@@ -12,7 +13,6 @@ function RenderDirectoryItem({ campsite }) {
                     <CardTitle>{campsite.name}</CardTitle>
                 </CardImgOverlay>
             </Link>
-
         </Card>
     );
 }
@@ -34,7 +34,7 @@ function Directory(props) {
                     <Loading />
                 </div>
             </div>
-        )
+        );
     }
     if (props.campsites.errMess) {
         return (
@@ -45,19 +45,15 @@ function Directory(props) {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
                     <Breadcrumb>
-                        <BreadcrumbItem>
-                            <Link to="/home">Home</Link>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <Link to="/home">Directory</Link>
-                        </BreadcrumbItem>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Directory</BreadcrumbItem>
                     </Breadcrumb>
                     <h2>Directory</h2>
                     <hr />
